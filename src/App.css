@@ -1,42 +1,186 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Gochi+Hand&family=Inconsolata:wght@200..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Patrick+Hand&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.container {
+    min-width: 80%;
+    max-width: 100%;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.main-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.add-todo-container {
+    background-color: hsl(235, 24%, 19%);
+    padding: 1rem;
+    border-radius: 4px;
+    display: flex;
+    gap: 1rem;
 }
 
-.card {
-  padding: 2em;
+.add-todo-container.light {
+    background-color: hsl(0, 0%, 98%);
 }
 
-.read-the-docs {
-  color: #888;
+.todo {
+    padding: 1rem;
+    border-bottom: 1.4px solid hsl(233, 14%, 35%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
+
+.todo.light {
+    border-color: hsl(233, 11%, 84%);
+}
+
+.todo-content {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    color: hsl(234, 39%, 85%);
+}
+
+.todo-content.light {
+    color: hsl(235, 19%, 35%);
+}
+
+.todos-container {
+    overflow-y: auto;
+    scrollbar-color: hsl(233, 14%, 35%) hsl(235, 24%, 19%);
+    scrollbar-width: thin;
+}
+
+.todos-container.light {
+    scrollbar-color: hsl(234, 39%, 85%) hsl(0, 0%, 98%);
+}
+
+.list-container {
+    width: 100%;
+    height: 50vh;
+    background-color: hsl(235, 24%, 19%);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.list-container.light {
+    background-color: hsl(0, 0%, 98%);
+    box-shadow: 1px 1px 12px hsl(234, 39%, 85%);
+}
+
+.list-footer-container {
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    color: hsl(236, 9%, 61%);
+}
+
+.footer-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.cross-img {
+    cursor: pointer;
+}
+
+input {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.add-todo-container input {
+    color: hsl(234, 39%, 85%);
+    border: none;
+    background: transparent;
+}
+
+.add-todo-container input.light {
+    color: hsl(235, 19%, 35%);
+}
+
+.add-todo-container input:focus {
+    outline: none !important;
+    border: none !important;
+}
+
+.circle {
+    width: 25px;
+    height: 25px;
+    border: 2px solid hsl(235, 16%, 43%);
+    border-radius: 50%;
+}
+
+.circle.light {
+    border-color: hsl(233, 11%, 84%);
+}
+
+.button-circle {
+    cursor: pointer;
+    background: transparent;
+}
+
+.button-circle:hover {
+    border-color: hsl(220, 98%, 61%);
+}
+
+.checked {
+    border: 2px solid hsl(235, 16%, 43%);
+    background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+.completed {
+    color: hsl(233, 14%, 35%);
+    text-decoration: line-through;
+}
+
+.completed.light {
+    color: hsl(236, 9%, 61%);
+}
+
+.footer-buttons small {
+    cursor: pointer;
+}
+
+.footer-buttons small:hover {
+    color: hsl(236, 33%, 92%);
+}
+
+.footer-buttons small.light:hover {
+    color: hsl(235, 19%, 35%);
+}
+
+.clear-completed {
+    cursor: pointer;
+}
+
+.clear-completed:hover {
+    color: hsl(236, 33%, 92%);
+}
+
+.clear-completed.light:hover {
+    color: hsl(235, 19%, 35%);
+}
+
+.footer-text {
+    color: hsl(233, 14%, 35%);
+    text-align: center;
+    font-size: 16px;
+    margin-top: 2rem;
+}
+
+.footer-text.light {
+    color: hsl(236, 9%, 61%);
+}
+
