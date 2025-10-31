@@ -1,7 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import ButtonComponents from './ButtonComponents';
 
 const ListFooter = (props) => {
+  const [width, setWidth] = useState(window.innerWidth);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if(width <= 600) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  }, [width])
   
+  window.addEventListener('resize', () => {
+      setWidth(window.innerWidth);
+  })
+
   function HandleClick(value) {
     props.changeList(value);
   }
@@ -13,11 +28,7 @@ const ListFooter = (props) => {
   return (
     <div className='list-footer-container'>
       <small><span>{props.count}</span> items left</small>
-      <div className='footer-buttons'>
-        <small style={props.filter==="all" ? {color: 'hsl(220, 98%, 61%)'} : {}} onClick={() => HandleClick('all')}>All</small>
-        <small style={props.filter==="active" ? {color: 'hsl(220, 98%, 61%)'} : {}} onClick={() => HandleClick('active')}>Active</small>
-        <small style={props.filter==="completed" ? {color: 'hsl(220, 98%, 61%)'} : {}} onClick={() => HandleClick('completed')}>Completed</small>
-      </div>
+      {!isMobile ? <ButtonComponents isMobile={isMobile} filter={props.filter} handleClick={HandleClick}/> : ''}
       <small className='clear-completed' onClick={HandleClear}>Clear Completed</small>
     </div>
   )

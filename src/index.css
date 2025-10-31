@@ -11,7 +11,7 @@ img {
 }
 
 body {
-    background: url("./images/bg-desktop-dark.jpg");
+    background: url("/images/bg-desktop-dark.jpg");
     background-repeat: no-repeat;
     background-size: contain;
     background-color: hsl(235, 21%, 11%);
@@ -24,7 +24,7 @@ body {
 }
 
 body.light {
-    background: url("./images/bg-desktop-light.jpg");
+    background: url("/images/bg-desktop-light.jpg");
     background-repeat: no-repeat;
     background-size: contain;
     background-color: hsl(0, 0%, 98%);
@@ -42,11 +42,11 @@ body.light {
 
 @media (max-width: 900px) {
     body {
-        background-image: url('./images/bg-mobile-dark.jpg');
+        background-image: url('/images/bg-mobile-dark.jpg');
     }
 
     body.light {
-        background: url("./images/bg-mobile-dark.jpg");
+        background: url("/images/bg-mobile-dark.jpg");
         background-repeat: no-repeat;
         background-size: contain;
     }

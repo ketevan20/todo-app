@@ -151,6 +151,7 @@ input {
 
 .footer-buttons small {
     cursor: pointer;
+    color: hsl(236, 9%, 61%);
 }
 
 .footer-buttons small:hover {
@@ -184,3 +185,16 @@ input {
     color: hsl(236, 9%, 61%);
 }
 
+.buttons-mobile {
+    background-color: hsl(235, 24%, 19%);
+    padding: 1rem;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.buttons-mobile.light {
+    background-color: hsl(0, 0%, 98%);
+    box-shadow: 1px 1px 12px hsl(234, 39%, 85%);
+}

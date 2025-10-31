@@ -25,6 +25,7 @@ const ThemeSwitch = (props) => {
     document.querySelector('.add-todo-container input')?.classList[method]('light');
     document.querySelector('.todos-container')?.classList[method]('light');
     document.querySelector('.footer-text')?.classList[method]('light');
+    document.querySelector('.buttons-mobile')?.classList[method]('light');
     document.querySelectorAll('.footer-buttons small').forEach(btn =>
       btn.classList[method]('light')
     );
