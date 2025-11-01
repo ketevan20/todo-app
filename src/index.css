@@ -46,7 +46,7 @@ body.light {
     }
 
     body.light {
-        background: url("/images/bg-mobile-dark.jpg");
+        background: url("/images/bg-mobile-light.jpg");
         background-repeat: no-repeat;
         background-size: contain;
     }
